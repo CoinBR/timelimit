@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Author: Pedro "Coin" Duarte
+# Project: https://github.com/CoinBR/timelimit
+# License: https://opensource.org/licenses/MIT
+
+msg="TIMEOUT ERROR!\nThis task is configured to take a maximum time of $1 to finish."
+timeout_error_code=124
+
+output_msg_if_timeout () {
+    error_code=$?
+    
+    [ $error_code -eq $timeout_error_code ] \
+        && echo $msg
+
+    exit $error_code
+}
+
+timeout $@ \
+    || output_msg_if_timeout
