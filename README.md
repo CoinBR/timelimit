@@ -16,6 +16,7 @@ Use it in the same way as you would use [timeout](https://www.gnu.org/software/c
 
 ### Example:
 ```timelimit 1s sleep 10```
-outputs:
+
+will ouput:
 ```TIMEOUT ERROR!
 This task is configured to take a maximum time of 1s to finish.```
